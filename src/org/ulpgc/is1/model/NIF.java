@@ -7,8 +7,8 @@ public class NIF {
         this.number = number;
     }
     public String isValid() {
-        if (this.number().length() == 9) {
-            return this.number();
+        if (this.number.length() == 9) {
+            return this.number;
         }
         else {
             return "XXXX";

@@ -5,10 +5,10 @@ public class Umpire {
     public String surname;
 
     public Umpire(String name, String surname) {
-        this.name() = name;
-        this.surname() = surname;
+        this.name = name;
+        this.surname = surname;
     }
     public String getName() {
-        return this.name();
+        return this.name;
     }
 }
