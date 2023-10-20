@@ -4,11 +4,11 @@ public class Equipment extends Extra {
     public String name;
 
     public Equipment(int price, String name) {
-        super();
+        super(price);
         this.name = name;
     }
 
-    public void getName() {
+    public String getName() {
 
         return name;
     }
