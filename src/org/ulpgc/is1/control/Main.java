@@ -2,6 +2,7 @@ package org.ulpgc.is1.control;
 
 import org.ulpgc.is1.model.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,7 +28,7 @@ public class Main {
             courtList.add(newCourt);
         }
 
-        public void reserve(ArrayList<Customer> customers,Court court, int price, Date date) {
+        public void reserve(ArrayList<Customer> customers, ArrayList<Court> court, int price, Date date) {
             Reservation reservation = new Reservation(date, customers, court, price);
             reservations.add(reservation);
         }
@@ -39,7 +40,7 @@ public class Main {
     }
 
     public static void init(PaddleManager paddleManager) {
-        Member cliente1 = new Member(11, "Ana", "Santana", new NIF("1111111"));
+        Customer cliente1 = new Customer("Ana", "Santana", new NIF("1111111"));
         Customer cliente2 = new Customer("Jorge", "Hernandez", new NIF("12SD34TT4"));
 
         Court court1 = new Court("Pista1", 1, CourtType.FASTCOURT);
@@ -68,17 +69,23 @@ public class Main {
         System.out.println("Precio: " + court2.getPrice());
         System.out.println("Tipo: " + court2.getType());
 
-        ArrayList<Customer> custList = new ArrayList<Customer>();
+        ArrayList<Customer> custList = new ArrayList<>();
         custList.add(primerCliente);
-        Reservation reservation = new Reservation(new Date(), custList, segundaPista, 10);
-        paddleManager.reservations.add(reservation);
+        ArrayList<Court> courList = new ArrayList<>();
+        courList.add(segundaPista);
+        paddleManager.reserve(custList, courList, 10, new Date());
 
         System.out.println("Datos de las reservas realizadas: ");
         for (Reservation reserva : paddleManager.reservations) {
-            System.out.println("Cliente: " + reservation.getCustomers());
-            System.out.println("Pista: " + reservation.getCourt());
-            System.out.println("Día: " + reservation.getDate());
+            System.out.println("Clientes: ");
+            for (Customer customer : reserva.getCustomers()) {
+                System.out.println("Nombre: " + customer.getName() + ", Apellido: " + customer.getSurname() + ", NIF: " + customer.getNif());
+            }
+            System.out.println("Pista: ");
+            for (Court court : reserva.getCourts()) {
+                System.out.println("Nombre: " + court.getName() + ", Precio: " + court.getPrice() + ", Tipo: " + court.getType());
+            }
+            System.out.println("Día: " + reserva.getDate());
         }
     }
 }
-

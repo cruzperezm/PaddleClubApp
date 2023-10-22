@@ -5,37 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
-    private ArrayList<Customer> customer;
-    private Court court;
+    private List<Customer> customers;
+    private List<Court> courts;
+    private List<Extra> extras;
+    public Customer customer;
+    public Court court;
     private int price;
     private Date date;
     private static int NEXT_ID = 0;
     private final int id;
-    private List<Customer> customers;
-    private List<Court> courts;
-    private List<Extra> extras;
 
-    public Reservation(Date date, ArrayList<Customer> customer, Court court, int price) {
-        this.customer = customer;
-        this.court = court;
+    public Reservation(Date date, List<Customer> customers, List<Court> courts, int price) {
+        this.customers = customers;
+        this.courts = courts;
         this.price = price;
         this.date = date;
         this.id = NEXT_ID;
         NEXT_ID++;
-        this.customers = new ArrayList<>();
-        this.courts = new ArrayList<>();
         this.extras = new ArrayList<>();
     }
 
-    public String price(){
+    public int price() {
         int total = 0;
-        for (Court part : courts){
+        for (Court part : courts) {
             total += part.getPrice();
         }
-        return null;
+        return total;
     }
-
-
     public int getId() {
         return id;
     }
@@ -85,21 +81,22 @@ public class Reservation {
     public void setCustomers(Customer customers){
         this.customers = (List<Customer>) customers;
     }
-    public List<Customer> getCustomers(){
-        return customers;
+    public ArrayList<Customer> getCustomers(){
+        return (ArrayList<Customer>) this.customers;
+    }
+    public Customer getCustomers(int index){
+        if (index >= 0 && index < customers.size()){
+            return customers.get(index);
+        }
+        else{
+            return null;
+        }
     }
     public void addCustomers(Customer customers){
         customers.add(customers);
     }
     public void removeCustomer(Customer customers){
         customers.remove(customers);
-    }
-    public Customer getCustomers(int index){
-        if (index >= 0 && index < customers.size()){
-            return customers.get(index);
-        } else{
-            return null;
-        }
     }
 
     public List<Extra> getExtras() {
@@ -132,18 +129,15 @@ public class Reservation {
         this.remove(reservation);
     }
 
-    public void addCustomer(Member cliente1) {
-    }
-
-    public String getPrice() {
+    public int getPrice() {
         return price();
     }
 
-    public Court getCustomer() {
-        return null;
+    public Customer getCustomer() {
+        return this.customer;
     }
 
     public Court getCourt() {
-        return null;
+        return this.court;
     }
 }
