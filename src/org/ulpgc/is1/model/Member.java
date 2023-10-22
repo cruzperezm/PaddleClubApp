@@ -1,5 +1,5 @@
 package org.ulpgc.is1.model;
-import java.util.ArrayList; //CORREGIR PORQUE CREO QUE NO TIENE ARRAYS
+import java.util.ArrayList;
 
 public class Member extends Customer {
     public int points;
