@@ -8,23 +8,23 @@ import java.util.ArrayList;
 class Main {
     public static class PaddleManager {
         private Customer customer;
-        private ArrayList<Customer> customerList;
+        private ArrayList<Customer> customers;
         private Court court;
-        private ArrayList<Court> courtList;
+        private ArrayList<Court> courts;
 
         public PaddleManager() {
-            customerList = new ArrayList<>();
-            courtList = new ArrayList<>();
+            customers = new ArrayList<>();
+            courts = new ArrayList<>();
         }
 
         public void addCustomer(String name, String surname, NIF nif) {
             Customer newCustomer = new Customer(name, surname, nif);
-            customerList.add(newCustomer);
+            customers.add(newCustomer);
         }
 
         public void addCourt(String name, int price, CourtType type) {
             Court newCourt = new Court(name, price, type);
-            courtList.add(newCourt);
+            courts.add(newCourt);
         }
 
         public Customer getCustomer() {
@@ -85,10 +85,10 @@ class Main {
         reserva.addCourts(court2);
 
         // borra el segundo cliente
-        paddleManager.customerList.remove(cliente2);
+        paddleManager.customers.remove(cliente2);
 
         // imprime el número de clientes en el club
-        paddleManager.customerList.size();
+        paddleManager.customers.size();
 
         // imprime todas las reservas realizadas, el cliente que ha hecho la reserva, el nombre de la pista y el coste
         System.out.println("Datos de las reservas realizadas: ");
