@@ -3,8 +3,8 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 import java.util.List;
 public class Extra{
-    public int price;
-    public List<Reservation> reservations;
+    private int price;
+    private List<Reservation> reservations;
 
     public Extra(int price) {
         this.price = price;

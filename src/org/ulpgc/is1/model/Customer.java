@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Customer extends ArrayList<Customer> {
-    public String name;
-    public String surname;
-    public NIF nif;
-    public ArrayList<Reservation> reservations;
+    private String name;
+    private String surname;
+    private NIF nif;
+    private ArrayList<Reservation> reservations;
 
     public Customer(String name, String surname, NIF nif) {
         this.name = name;

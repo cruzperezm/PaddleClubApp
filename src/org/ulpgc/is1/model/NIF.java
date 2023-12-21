@@ -2,17 +2,19 @@ package org.ulpgc.is1.model;
 
 public class NIF {
 
-    public String number;
+    private String number;
 
     public NIF(String number){
         this.number = number;
     }
     public boolean isValid(){
-        String number = this.number;
-        if (number.length() != 9){
+        String dni = this.number;
+        if (dni.length() != 9){
             return false;
         }
-
+        String number = dni.substring(0, 9);
+        String letter = dni.substring(9);
+        return true;
     }
     public String getNumber() {
         return number;

@@ -2,8 +2,8 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList; //CORREGIR PORQUE CREO QUE NO TIENE ARRAYS
 
 public class Member extends Customer {
-    public int points;
-    public Address address;
+    private int points;
+    private Address address;
     private ArrayList<Address> Address;
 
     public Member(int points, String name, String surname, NIF nif) {

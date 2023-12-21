@@ -9,12 +9,12 @@ public class PaddleClub {
 
     private ArrayList<Customer> customerList;
     private ArrayList<Court> courtList;
-    private ArrayList<Reservation> reservations;
+    private ArrayList<Reservation> reservationsList;
 
     public void PaddleClub() {
         customerList = new ArrayList<>();
         courtList = new ArrayList<>();
-        reservations = new ArrayList<>();
+        reservationsList = new ArrayList<>();
     }
 
     public void addCustomer(String name, String surname, NIF nif) {
@@ -29,9 +29,11 @@ public class PaddleClub {
 
     public void reserve(ArrayList<Customer> customers, ArrayList<Court> court, int price, Date date) {
         Reservation reservation = new Reservation(date, customers, court, price);
-        reservations.add(reservation);
+        reservationsList.add(reservation);
     }
 
+    public void init(){
 
+    }
 }
 

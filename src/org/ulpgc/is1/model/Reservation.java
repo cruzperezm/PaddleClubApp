@@ -8,8 +8,8 @@ public class Reservation {
     private List<Customer> customers;
     private List<Court> courts;
     private List<Extra> extras;
-    public Customer customer;
-    public Court court;
+    private Customer customer;
+    private Court court;
     private int price;
     private Date date;
     private static int NEXT_ID = 0;
