@@ -6,7 +6,6 @@ public class Address {
     private int number;
     private int postalCode;
     private String city;
-    private Member members;
 
     public Address(String street, int number, int postalCode, String city) {
         this.street = street;
@@ -45,12 +44,5 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public Member getMembers(){
-        return members;
-    }
-    public void setMembers(Member members){
-        this.members = members;
     }
 }

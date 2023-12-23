@@ -4,12 +4,10 @@ import java.util.ArrayList; //CORREGIR PORQUE CREO QUE NO TIENE ARRAYS
 public class Member extends Customer {
     private int points;
     private Address address;
-    private ArrayList<Address> Address;
 
-    public Member(int points, String name, String surname, NIF nif) {
+    public Member(int points, String name, String surname, Nif nif) {
         super(name, surname, nif);
         this.points = points;
-        this.Address = new ArrayList<>();
     }
 
     public int getPoints() {
@@ -19,16 +17,11 @@ public class Member extends Customer {
     public void setPoints(int points) {
         this.points = points;
     }
+    public void setAddress(String street, int number, int postalCode, String city){
+        this.address = new Address(street, number, postalCode, city);
+    }
 
     public Address getAddress(){
         return address;
-    }
-
-    public void addAddress(Address address){
-        Address.add(address);
-    }
-
-    public void removeAddress(Address address) {
-        Address.remove(address);
     }
 }

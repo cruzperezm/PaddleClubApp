@@ -6,10 +6,10 @@ import java.util.List;
 public class Customer extends ArrayList<Customer> {
     private String name;
     private String surname;
-    private NIF nif;
+    private Nif nif;
     private ArrayList<Reservation> reservations;
 
-    public Customer(String name, String surname, NIF nif) {
+    public Customer(String name, String surname, Nif nif) {
         this.name = name;
         this.surname = surname;
         this.nif = nif;
@@ -32,12 +32,12 @@ public class Customer extends ArrayList<Customer> {
         this.surname = surname;
     }
 
-    public NIF getNif() {
-        return nif;
+    public String getNif() {
+        return this.nif.getNumber();
     }
 
-    public void setNif(NIF nif) {
-        this.nif = nif;
+    public void setNif(String nif) {
+        this.nif.setNumber(nif);
     }
 
     public List<Reservation> getReservations(){

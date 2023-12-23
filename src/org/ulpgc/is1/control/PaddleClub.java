@@ -11,13 +11,13 @@ public class PaddleClub {
     private ArrayList<Court> courtList;
     private ArrayList<Reservation> reservationsList;
 
-    public void PaddleClub() {
+    public PaddleClub() {
         customerList = new ArrayList<>();
         courtList = new ArrayList<>();
         reservationsList = new ArrayList<>();
     }
 
-    public void addCustomer(String name, String surname, NIF nif) {
+    public void addCustomer(String name, String surname, Nif nif) {
         Customer newCustomer = new Customer(name, surname, nif);
         customerList.add(newCustomer);
     }
@@ -31,9 +31,7 @@ public class PaddleClub {
         Reservation reservation = new Reservation(date, customers, court, price);
         reservationsList.add(reservation);
     }
-
     public void init(){
-
+        addCustomer("Ana", "Torre", 12345678B);
     }
 }
-
