@@ -11,7 +11,7 @@ public class Member extends Customer {
     }
 
     public int getPoints() {
-        return points;
+        return this.points;
     }
 
     public void setPoints(int points) {
@@ -22,6 +22,6 @@ public class Member extends Customer {
     }
 
     public Address getAddress(){
-        return address;
+        return this.address;
     }
 }

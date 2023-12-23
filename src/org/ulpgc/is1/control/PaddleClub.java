@@ -32,6 +32,5 @@ public class PaddleClub {
         reservationsList.add(reservation);
     }
     public void init(){
-        addCustomer("Ana", "Torre", 12345678B);
     }
 }
