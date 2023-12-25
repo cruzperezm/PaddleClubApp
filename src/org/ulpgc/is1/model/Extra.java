@@ -16,7 +16,7 @@ public class Extra{
     }
 
     public int getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(int price) {
@@ -24,16 +24,16 @@ public class Extra{
     }
 
     public List<Reservation> getReservations(){
-        return reservations;
+        return this.reservations;
     }
     public void setReservations(List<Reservation> reservations){
         this.reservations = reservations;
     }
     public void addReservations(Reservation reservation){
-        reservation.add(reservation);
+        reservations.add(reservation);
     }
     public void removeReservations(Reservation reservation){
-        reservation.remove(reservation);
+        reservations.remove(reservation);
     }
     public Reservation getReservation(int index){
         if (index >= 0 && index < reservations.size()){

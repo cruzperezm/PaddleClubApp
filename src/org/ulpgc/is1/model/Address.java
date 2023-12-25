@@ -15,7 +15,7 @@ public class Address {
     }
 
     public String getStreet() {
-        return street;
+        return this.street;
     }
 
     public void setStreet(String street) {
@@ -23,7 +23,7 @@ public class Address {
     }
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public void setNumber(int number) {
@@ -31,7 +31,7 @@ public class Address {
     }
 
     public int getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
 
     public void setPostalCode(int postalCode) {
@@ -39,7 +39,7 @@ public class Address {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {

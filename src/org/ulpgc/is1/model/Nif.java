@@ -12,6 +12,8 @@ public class Nif {
         if (dni.length() != 9){
             return false;
         }
+        // String number = dni.substring(0, 9);
+        // String letra = dni.substring(9);
         return true;
     }
     public String getNumber() {

@@ -8,12 +8,8 @@ public class Equipment extends Extra {
         this.name = name;
     }
 
-    public String getName(String name) {
-        return this.name;
-    }
-
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
