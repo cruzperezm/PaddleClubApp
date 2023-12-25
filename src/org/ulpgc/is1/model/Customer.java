@@ -25,7 +25,7 @@ public class Customer extends ArrayList<Customer> {
     }
 
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
     public void setSurname(String surname) {
@@ -41,13 +41,13 @@ public class Customer extends ArrayList<Customer> {
     }
 
     public List<Reservation> getReservations(){
-        return reservations;
+        return this.reservations;
     }
     public void setReservations(ArrayList<Reservation> reservations){
         this.reservations = reservations;
     }
     public void addReservations(Reservation reservation){
-        reservation.add(reservation);
+        reservations.add(reservation);
     }
     public void removeReservations(Reservation reservation){
         reservation.remove(reservation);
