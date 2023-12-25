@@ -9,7 +9,7 @@ public class Equipment extends Extra {
     }
 
     public String getName() {
-        return this.name;
+        return this.getName(this.name);
     }
 
     public void setName(String name) {

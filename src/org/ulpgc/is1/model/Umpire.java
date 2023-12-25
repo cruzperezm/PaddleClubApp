@@ -10,24 +10,20 @@ public class Umpire extends Extra{
         this.surname = surname;
     }
 
-    public String getName(String name) {
-        return this.name;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public String getName(){
+        return this.getName(this.name);
 
     public void setName(String name) {
         this.name = name;
     }
 
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
 }
 
