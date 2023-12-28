@@ -8,8 +8,9 @@ public class Equipment extends Extra {
         this.name = name;
     }
 
-    public String getName() {
-        return this.getName(this.name);
+    @Override
+    public String getName(){
+        return this.getName();
     }
 
     public void setName(String name) {

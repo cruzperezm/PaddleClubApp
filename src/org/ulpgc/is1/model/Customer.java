@@ -1,6 +1,7 @@
 package org.ulpgc.is1.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Customer {
@@ -32,8 +33,8 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String getNif() {
-        return this.nif.getNumber();
+    public Nif getNif() {
+        return this.nif;
     }
 
     public void setNif(String nif) {
@@ -46,27 +47,22 @@ public class Customer {
     public void setReservations(ArrayList<Reservation> reservations){
         this.reservations = reservations;
     }
-    public void addReservations(Reservation reservation){
+    public void addReservation(Date date, Customer customer, Court court, int price){
+        Reservation reservation = new Reservation(date, customer, court, price);
         reservations.add(reservation);
     }
-    public void removeReservations(Reservation reservation){
-        reservation.remove(reservation);
+    public void removeReservation(Reservation reservation){
+        reservations.remove(reservation);
     }
     public Reservation getReservations(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
-        } else {
+        }
+        else {
             return null;
         }
     }
-
-    public boolean add(Customer customer) {
-        this.add(customer);
-        boolean wasAlreadyThere = this.add(customer);
-        return wasAlreadyThere;
-    }
-
-    public void remove(Customer customer) {
-        this.remove(customer);
+    public void addReservation(Reservation reservation) {
+        this.reservations.add(reservation);
     }
 }

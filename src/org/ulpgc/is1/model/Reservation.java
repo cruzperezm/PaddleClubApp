@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
-    private List<Customer> customers;
-    private List<Court> courts;
     private List<Extra> extras;
     private Customer customer;
     private Court court;
@@ -15,9 +13,7 @@ public class Reservation {
     private static int NEXT_ID = 0;
     private final int id;
 
-    public Reservation(Date date, List<Customer> customers, List<Court> courts, int price) {
-        this.customers = customers;
-        this.courts = courts;
+    public Reservation(Date date, Customer customer, Court court, int price) {
         this.price = price;
         this.date = date;
         this.id = NEXT_ID;
@@ -25,15 +21,15 @@ public class Reservation {
         this.extras = new ArrayList<>();
     }
 
-    public int price() {
-        int total = 0;
-        for (Court part : courts) {
-            total += part.getPrice();
+    public int price(){
+        int price = 0;
+        for (Extra i: this.extras) {
+            price += i.getPrice();
         }
-        return total;
+        return price;
     }
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public Date getDate() {
@@ -56,79 +52,28 @@ public class Reservation {
         this.price = price;
     }
 
-    //composiciones * a 1 con Court
-    public void setCourts(Court courts){
-        this.courts = (List<Court>) courts;
-    }
-    public List<Court> getCourts(){
-        return courts;
-    }
-    public void addCourts(Court court){
-        courts.add(court);
-    }
-    public void removeCourts(Court court){
-        courts.remove(court);
-    }
-    public Court getCourt(int index){
-        if (index >= 0 && index < courts.size()){
-            return courts.get(index);
-        } else{
-            return null;
-        }
-    }
-
-    //composicion customer * a 1
-    public void setCustomers(Customer customers){
-        this.customers = (List<Customer>) customers;
-    }
-    public ArrayList<Customer> getCustomers(){
-        return (ArrayList<Customer>) this.customers;
-    }
-    public Customer getCustomers(int index){
-        if (index >= 0 && index < customers.size()){
-            return customers.get(index);
-        }
-        else{
-            return null;
-        }
-    }
-    public void addCustomers(Customer customers){
-        customers.add(customers);
-    }
-    public void removeCustomer(Customer customers){
-        customers.remove(customers);
-    }
-
     public List<Extra> getExtras() {
-        return extras;
+        return this.extras;
     }
     public void setExtras(List<Extra> extras) {
         this.extras = extras;
     }
     public void addExtras(Extra extras) {
-        extras.add(extras);
+        this.extras.add(extras);
     }
 
     public void removeExtras(Extra extra) {
-        extras.remove(extra);
+        this.extras.remove(extra);
     }
 
     public Extra getExtras(int index) {
         if (index >= 0 && index < extras.size()) {
             return extras.get(index);
-        } else {
+        }
+        else {
             return null;
         }
     }
-
-    public void add(Reservation reservation) {
-        this.add(reservation);
-    }
-
-    public void remove(Reservation reservation) {
-        this.remove(reservation);
-    }
-
     public int getPrice() {
         return price();
     }

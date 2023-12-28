@@ -15,15 +15,16 @@ public class Nif {
         Pattern regex = Pattern.compile(pattern);
         Matcher matcher = regex.matcher(input);
 
-        return matcher.matches();}
+        return matcher.matches();
+    }
 
     public String getNumber() {
-        if(!isValid(this.number)){
-            return "XXXX";
-        }
         return this.number;
     }
     public void setNumber(String number) {
+        if(!isValid(number)){
+            this.number = "XXXX";
+        }
         this.number = number;
     }
 }

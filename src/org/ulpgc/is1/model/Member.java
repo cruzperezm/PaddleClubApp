@@ -5,9 +5,11 @@ public class Member extends Customer {
     private int points;
     private Address address;
 
-    public Member(int points, String name, String surname, Nif nif) {
+    public Member(int points, String name, String surname, Nif nif,
+                  String street, int number, int postalCode, String city) {
         super(name, surname, nif);
         this.points = points;
+        this.address = new Address(street, number, postalCode, city);
     }
 
     public int getPoints() {
@@ -21,7 +23,13 @@ public class Member extends Customer {
         this.address = new Address(street, number, postalCode, city);
     }
 
-    public Address getAddress(){
-        return this.address;
+    public String getAddress(){
+        return this.address.getStreet()
+                + ""
+                + this.address.getNumber()
+                + ""
+                + this.address.getPostalCode()
+                + ""
+                + this.address.getNumber();
     }
 }

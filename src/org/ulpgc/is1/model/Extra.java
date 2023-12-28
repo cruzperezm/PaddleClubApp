@@ -3,28 +3,25 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 import java.util.List;
 abstract class Extra {
+    private List reservations;
     private int price;
+
+    abstract public String getName();
 
     public Extra(int price) {
         this.price = price;
+        this.reservations = new ArrayList();
     }
-
-    public String getName(String name){
-        return name;
-    }
-
     public int getPrice() {
         return this.price;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
-
-    public void add(Extra extras) {
-        this.add(extras);
+    public Object getReservation(int index){
+        return this.reservations.get(index);
     }
-    public void remove(Extra extras){
-        this.remove(extras);
+    public void addReservation(Reservation reservation){
+        this.reservations.add(reservation);
     }
 }
