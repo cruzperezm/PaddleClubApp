@@ -17,6 +17,7 @@ public class Reservation {
         this.price = price;
         this.date = date;
         this.id = NEXT_ID;
+        this.court = court;
         NEXT_ID++;
         this.extras = new ArrayList<>();
     }
@@ -48,7 +49,13 @@ public class Reservation {
         this.court = court;
     }
 
-    public void setPrice(int price) {
+    public void setPrice() {
+        int precio = this.court.getPrice();
+        for(Extra extra: this.getExtras()){
+            precio += extra.getPrice();
+        }
+    }
+    public void setPrice(int price){
         this.price = price;
     }
 

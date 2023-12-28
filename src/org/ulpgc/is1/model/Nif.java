@@ -19,7 +19,10 @@ public class Nif {
     }
 
     public String getNumber() {
-        return this.number;
+        if(!isValid(this.number)){
+            return "XXXX";
+        }
+        return number;
     }
     public void setNumber(String number) {
         if(!isValid(number)){

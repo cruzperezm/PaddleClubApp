@@ -33,8 +33,8 @@ public class Customer {
         this.surname = surname;
     }
 
-    public Nif getNif() {
-        return this.nif;
+    public String getNif() {
+        return this.nif.getNumber();
     }
 
     public void setNif(String nif) {
