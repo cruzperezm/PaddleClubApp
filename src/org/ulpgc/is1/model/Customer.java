@@ -44,9 +44,6 @@ public class Customer {
     public List<Reservation> getReservations(){
         return this.reservations;
     }
-    public void setReservations(ArrayList<Reservation> reservations){
-        this.reservations = reservations;
-    }
     public void addReservation(Date date, Customer customer, Court court, int price){
         Reservation reservation = new Reservation(date, customer, court, price);
         reservations.add(reservation);

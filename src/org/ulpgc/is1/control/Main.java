@@ -7,16 +7,12 @@ import java.util.Date;
 public class Main {
 
     public static void init(PaddleManager paddleManager) {
-        Member miembro = new Member(11, "Ana", "Santana", new Nif("11111111T"),
-                "Leon y Castillo", 41, 35010, "Las Palmas de Gran Canaria");
-        paddleManager.addCustomer(miembro);
-        Customer cliente = new Customer("Jorge", "Hernandez", new Nif("12SD34TT4"));
-        paddleManager.addCustomer(cliente);
+        paddleManager.addCustomer(new Member(11, "Ana", "Santana", new Nif("11111111H"),
+                "Leon y Castillo", 41, 35010, "Las Palmas de Gran Canaria"));
+        paddleManager.addCustomer("Jorge", "Hernandez", new Nif("12SD34TT4"));
 
-        Court pistaRapida = new Court("Rápida", 20, CourtType.FASTCOURT);
-        Court pistaLenta = new Court("Lenta", 20, CourtType.SLOWCOURT);
-        paddleManager.addCourt(pistaRapida);
-        paddleManager.addCourt(pistaLenta);
+        paddleManager.addCourt(new Court("Rápida", 20, CourtType.FASTCOURT));
+        paddleManager.addCourt(new Court("Lenta", 20, CourtType.SLOWCOURT));
 
     }
     public static void main(String[] args) {
@@ -47,7 +43,7 @@ public class Main {
         System.out.println("Hay " + paddleManager.getCustomerSize() + " cliente(s)");
 
         for(Customer c: paddleManager.getCustomers()){
-            System.out.println("Datos del cliente: ");
+            System.out.println("Cliente: ");
             System.out.println("Nombre: " + c.getName());
             System.out.println("Apellido: " + c.getSurname());
             System.out.println("NIF: " + c.getNif());

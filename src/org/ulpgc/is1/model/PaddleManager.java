@@ -35,7 +35,7 @@ public class PaddleManager {
 
     public void reserve(Date date, Customer customer, Court court, int price) {
         Reservation reservation = new Reservation(date, customer, court, 0);
-        reservation.setPrice();
+        reservation.setPrice(); // calcula el precio total (en caso de que hayan extras)
         customer.addReservation(reservation);
         court.addReservation(reservation);
         reservations.add(reservation);
