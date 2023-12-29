@@ -1,6 +1,7 @@
 package org.ulpgc.is1.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Court {
@@ -33,5 +34,30 @@ public class Court {
     }
     public void setType(CourtType type) {
         this.type = type;
+    }
+
+    public List<Reservation> getReservations(){
+        return this.reservations;
+    }
+    public void setReservations(ArrayList<Reservation> reservations){
+        this.reservations = reservations;
+    }
+    public void addReservation(Date date, Customer customer, Court court, int price){
+        Reservation reservation = new Reservation(date, customer, court, price);
+        reservations.add(reservation);
+    }
+    public void removeReservation(Reservation reservation){
+        reservations.remove(reservation);
+    }
+    public Reservation getReservations(int index) {
+        if (index >= 0 && index < reservations.size()) {
+            return (Reservation) reservations.get(index);
+        }
+        else {
+            return null;
+        }
+    }
+    public void addReservation(Reservation reservation) {
+        this.reservations.add(reservation);
     }
 }

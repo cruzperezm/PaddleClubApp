@@ -37,6 +37,7 @@ public class PaddleManager {
         Reservation reservation = new Reservation(date, customer, court, 0);
         reservation.setPrice();
         customer.addReservation(reservation);
+        court.addReservation(reservation);
         reservations.add(reservation);
     }
 
