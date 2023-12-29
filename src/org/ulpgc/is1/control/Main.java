@@ -28,25 +28,32 @@ public class Main {
         System.out.println(cliente.getNif());
 
         System.out.println("Datos del primer cliente: ");
-        System.out.println(paddleManager.getCustomer(0).getName());
-        System.out.println(paddleManager.getCustomer(0).getSurname());
-        System.out.println(paddleManager.getCustomer(0).getNif());
+        System.out.println("Nombre: " + paddleManager.getCustomer(0).getName() + " " +
+                paddleManager.getCustomer(0).getSurname());
+        System.out.println("NIF: " + paddleManager.getCustomer(0).getNif());
         System.out.println("Datos del segundo cliente: ");
-        System.out.println(paddleManager.getCustomer(1).getName());
-        System.out.println(paddleManager.getCustomer(1).getSurname());
-        System.out.println(paddleManager.getCustomer(1).getNif());
+        System.out.println("Nombre: " + paddleManager.getCustomer(1).getName() + " " +
+                paddleManager.getCustomer(1).getSurname());
+        System.out.println("NIF: " + paddleManager.getCustomer(1).getNif());
 
         paddleManager.reserve(new Date(), miembro, pistaLenta, pistaLenta.getPrice());
 
         paddleManager.deleteCustomer(1);
 
-        System.out.println(paddleManager.getCustomerSize());
+        System.out.println("Hay " + paddleManager.getCustomerSize() + " cliente(s)");
 
-        for(Reservation reservation: paddleManager.getReservations()){
-            System.out.println(reservation.getCustomer());
-            System.out.println(reservation.getCourt());
-            System.out.println(reservation.getDate());
-            System.out.println(reservation.getPrice());
+        for(Customer c: paddleManager.getCustomers()){
+            System.out.println("Datos del cliente: ");
+            System.out.println("Nombre: " + c.getName());
+            System.out.println("Apellido: " + c.getSurname());
+            System.out.println("NIF: " + c.getNif());
+            for (Reservation r: c.getReservations()){
+                System.out.println("Datos de su reserva: ");
+                System.out.println("Precio: " + r.getPrice());
+                System.out.println("Nombre de la pista: " + r.getCourt().getName());
+                System.out.println("Tipo de pista: " + r.getCourt().getType());
+                System.out.println("Fecha: " + r.getDate());
+            }
         }
     }
 
