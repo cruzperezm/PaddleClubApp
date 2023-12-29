@@ -5,10 +5,6 @@ import org.ulpgc.is1.model.*;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
-        PaddleManager paddleManager = new PaddleManager();
-        init(paddleManager);
-    }
 
     public static void init(PaddleManager paddleManager) {
         Member miembro = new Member(11, "Ana", "Santana", new Nif("11111111T"),
@@ -22,10 +18,15 @@ public class Main {
         paddleManager.addCourt(pistaRapida);
         paddleManager.addCourt(pistaLenta);
 
+    }
+    public static void main(String[] args) {
+        PaddleManager paddleManager = new PaddleManager();
+        init(paddleManager);
+
         System.out.println("NIF del primer cliente: ");
-        System.out.println(miembro.getNif());
+        System.out.println(paddleManager.getCustomer(0).getNif());
         System.out.println("NIF del segundo cliente: ");
-        System.out.println(cliente.getNif());
+        System.out.println(paddleManager.getCustomer(1).getNif());
 
         System.out.println("Datos del primer cliente: ");
         System.out.println("Nombre: " + paddleManager.getCustomer(0).getName() + " " +
@@ -36,7 +37,10 @@ public class Main {
                 paddleManager.getCustomer(1).getSurname());
         System.out.println("NIF: " + paddleManager.getCustomer(1).getNif());
 
-        paddleManager.reserve(new Date(), miembro, pistaLenta, pistaLenta.getPrice());
+        paddleManager.reserve(new Date(),
+                paddleManager.getCustomer(0),
+                paddleManager.getCourt(1),
+                paddleManager.getCourt(1).getPrice());
 
         paddleManager.deleteCustomer(1);
 
@@ -56,6 +60,7 @@ public class Main {
             }
         }
     }
-
 }
+
+
 

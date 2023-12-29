@@ -39,9 +39,6 @@ public class Court {
     public List<Reservation> getReservations(){
         return this.reservations;
     }
-    public void setReservations(ArrayList<Reservation> reservations){
-        this.reservations = reservations;
-    }
     public void addReservation(Date date, Customer customer, Court court, int price){
         Reservation reservation = new Reservation(date, customer, court, price);
         reservations.add(reservation);
@@ -49,7 +46,7 @@ public class Court {
     public void removeReservation(Reservation reservation){
         reservations.remove(reservation);
     }
-    public Reservation getReservations(int index) {
+    public Reservation getReservation(int index) {
         if (index >= 0 && index < reservations.size()) {
             return (Reservation) reservations.get(index);
         }
