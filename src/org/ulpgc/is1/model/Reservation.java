@@ -16,18 +16,19 @@ public class Reservation {
     public Reservation(Date date, Customer customer, Court court, int price) {
         this.price = price;
         this.date = date;
-        this.id = NEXT_ID;
+        this.id = ++NEXT_ID;
         this.court = court;
-        NEXT_ID++;
         this.extras = new ArrayList<>();
     }
 
-    public int price(){
-        int price = 0;
-        for (Extra i: this.extras) {
-            price += i.getPrice();
+    public int price() {
+        int totalPrice = court.getPrice();
+        if (this.extras != null) {
+            for (Extra i : this.extras) {
+                totalPrice += i.getPrice();
+            }
         }
-        return price;
+        return totalPrice;
     }
     public int getId() {
         return this.id;
@@ -48,13 +49,6 @@ public class Reservation {
     public void setCourt(Court court) {
         this.court = court;
     }
-
-    public void setPrice() {
-        int precio = this.court.getPrice();
-        for(Extra extra: this.getExtras()){
-            precio += extra.getPrice();
-        }
-    }
     public void setPrice(int price){
         this.price = price;
     }
@@ -62,27 +56,8 @@ public class Reservation {
     public List<Extra> getExtras() {
         return this.extras;
     }
-    public void setExtras(List<Extra> extras) {
-        this.extras = extras;
-    }
-    public void addExtras(Extra extras) {
-        this.extras.add(extras);
-    }
-
-    public void removeExtras(Extra extra) {
-        this.extras.remove(extra);
-    }
-
-    public Extra getExtras(int index) {
-        if (index >= 0 && index < extras.size()) {
-            return extras.get(index);
-        }
-        else {
-            return null;
-        }
-    }
     public int getPrice() {
-        return price();
+        return this.price();
     }
 
     public Customer getCustomer() {

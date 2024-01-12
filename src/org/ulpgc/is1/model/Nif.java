@@ -21,7 +21,6 @@ public class Nif {
             int i = (substring % 23);
             String letras = "TRWAGMYFPDXBNJZSQVHLCK";
             char letra = letras.charAt(i);
-            // Make sure input has at least 9 characters before accessing index 8
             if (letra == input.charAt(8)) {
                 return true;
             }

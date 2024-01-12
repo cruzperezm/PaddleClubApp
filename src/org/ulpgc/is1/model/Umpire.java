@@ -9,12 +9,9 @@ public class Umpire extends Extra{
         this.name = name;
         this.surname = surname;
     }
-    public String getSurname() {
-        return surname;
-    }
     @Override
     public String getName(){
-        return this.getName() + " " + this.getSurname();
+        return this.name + " " + this.surname;
     }
     public void setName(String name) {
         this.name = name;

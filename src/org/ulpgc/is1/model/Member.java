@@ -5,7 +5,7 @@ public class Member extends Customer {
     private int points;
     private Address address;
 
-    public Member(int points, String name, String surname, Nif nif,
+    public Member(int points, String name, String surname, String nif,
                   String street, int number, int postalCode, String city) {
         super(name, surname, nif);
         this.points = points;

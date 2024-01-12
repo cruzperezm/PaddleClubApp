@@ -15,7 +15,7 @@ public class PaddleManager {
         reservations = new ArrayList<>();
     }
 
-    public void addCustomer(String name, String surname, Nif nif) {
+    public void addCustomer(String name, String surname, String nif) {
         Customer newCustomer = new Customer(name, surname, nif);
         customerList.add(newCustomer);
     }
@@ -35,7 +35,6 @@ public class PaddleManager {
 
     public void reserve(Date date, Customer customer, Court court, int price) {
         Reservation reservation = new Reservation(date, customer, court, 0);
-        reservation.setPrice(); // calcula el precio total (en caso de que hayan extras)
         customer.addReservation(reservation);
         court.addReservation(reservation);
         reservations.add(reservation);

@@ -14,7 +14,7 @@ public class Court {
         this.name = name;
         this.price = price;
         this.type = type;
-        this.reservations = new ArrayList();
+        this.reservations = new ArrayList<>();
     }
 
     public String getName() {

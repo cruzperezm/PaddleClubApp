@@ -17,4 +17,16 @@ abstract class Extra {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public Reservation getReservation(int index){
+        return (Reservation) this.reservations.get(index);
+    }
+
+    public int reservationCount(){
+        return this.reservations.size();
+    }
+
+    public void addReservation(Reservation newReservation){
+        this.reservations.add(newReservation);
+    }
 }

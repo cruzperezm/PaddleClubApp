@@ -7,9 +7,9 @@ import java.util.Date;
 public class Main {
 
     public static void init(PaddleManager paddleManager) {
-        paddleManager.addCustomer(new Member(11, "Ana", "Santana", new Nif("11111111H"),
+        paddleManager.addCustomer(new Member(11, "Ana", "Santana", "12345678Z",
                 "Leon y Castillo", 41, 35010, "Las Palmas de Gran Canaria"));
-        paddleManager.addCustomer("Jorge", "Hernandez", new Nif("12SD34TT4"));
+        paddleManager.addCustomer("Jorge", "Hernández","12SD34TT4");
 
         paddleManager.addCourt(new Court("Rápida", 20, CourtType.FASTCOURT));
         paddleManager.addCourt(new Court("Lenta", 20, CourtType.SLOWCOURT));
@@ -35,8 +35,7 @@ public class Main {
 
         paddleManager.reserve(new Date(),
                 paddleManager.getCustomer(0),
-                paddleManager.getCourt(1),
-                paddleManager.getCourt(1).getPrice());
+                paddleManager.getCourt(1), paddleManager.getCourt(1).getPrice());
 
         paddleManager.deleteCustomer(1);
 

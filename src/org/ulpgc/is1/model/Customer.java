@@ -10,10 +10,10 @@ public class Customer {
     private Nif nif;
     private ArrayList<Reservation> reservations;
 
-    public Customer(String name, String surname, Nif nif) {
+    public Customer(String name, String surname, String nif) {
         this.name = name;
         this.surname = surname;
-        this.nif = nif;
+        this.nif = new Nif(nif);
         this.reservations = new ArrayList<>();
     }
 
