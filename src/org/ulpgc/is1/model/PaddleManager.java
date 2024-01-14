@@ -20,21 +20,13 @@ public class PaddleManager {
         customerList.add(newCustomer);
     }
 
-    public void addCustomer(Customer customer) {
-        customerList.add(customer);
-    }
-
     public void addCourt(String name, int price, CourtType type) {
         Court newCourt = new Court(name, price, type);
         courtList.add(newCourt);
     }
 
-    public void addCourt(Court court) {
-        courtList.add(court);
-    }
-
     public void reserve(Date date, Customer customer, Court court, int price) {
-        Reservation reservation = new Reservation(date, customer, court, 0);
+        Reservation reservation = new Reservation(date, customer, court, price);
         customer.addReservation(reservation);
         court.addReservation(reservation);
         reservations.add(reservation);
@@ -59,16 +51,12 @@ public class PaddleManager {
     public void deleteCustomer(int index) {
         if (index >= 0 && index < customerList.size()) {
             customerList.remove(customerList.get(index));
-        } else {
-            customerList = customerList;
         }
     }
 
     public void deleteCourt(int index) {
         if (index >= 0 && index < courtList.size()) {
             courtList.remove(courtList.get(index));
-        } else {
-            courtList = courtList;
         }
     }
 
@@ -97,10 +85,13 @@ public class PaddleManager {
     }
 
     public ArrayList<Reservation> getReservations() {
-        return this.reservations;
+        return new ArrayList<>(this.reservations);
     }
 
     public ArrayList<Customer> getCustomers() {
-        return this.customerList;
+        return new ArrayList<>(this.customerList);
+    }
+    public ArrayList<Court> getCourts() {
+        return new ArrayList<>(this.courtList);
     }
 }

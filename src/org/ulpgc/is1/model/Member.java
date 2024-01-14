@@ -1,6 +1,4 @@
 package org.ulpgc.is1.model;
-import java.util.ArrayList; //CORREGIR PORQUE CREO QUE NO TIENE ARRAYS
-
 public class Member extends Customer {
     private int points;
     private Address address;
@@ -25,11 +23,11 @@ public class Member extends Customer {
 
     public String getAddress(){
         return this.address.getStreet()
-                + ""
+                + " "
                 + this.address.getNumber()
-                + ""
+                + " "
                 + this.address.getPostalCode()
-                + ""
+                + " "
                 + this.address.getNumber();
     }
 }

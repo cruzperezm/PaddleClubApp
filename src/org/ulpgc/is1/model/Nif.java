@@ -7,7 +7,7 @@ public class Nif {
     private String number;
 
     public Nif(String number){
-        this.number = number;
+        setNumber(number);
     }
     private boolean isValid(String input) {
         // Adjusted the substring range to include the letter
@@ -29,9 +29,6 @@ public class Nif {
     }
 
     public String getNumber() {
-        if(!isValid(this.number)){
-            return "XXXX";
-        }
         return number;
     }
     public void setNumber(String number) {

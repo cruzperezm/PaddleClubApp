@@ -49,12 +49,9 @@ public class Reservation {
     public void setCourt(Court court) {
         this.court = court;
     }
-    public void setPrice(int price){
-        this.price = price;
-    }
 
     public List<Extra> getExtras() {
-        return this.extras;
+        return new ArrayList<>(this.extras);
     }
     public int getPrice() {
         return this.price();
@@ -66,5 +63,13 @@ public class Reservation {
 
     public Court getCourt() {
         return this.court;
+    }
+    public void removeExtra(int index){
+        this.extras.remove(index);
+    }
+    public void addExtra(Extra extra){
+        if (!this.extras.contains(extra)){
+        this.extras.add(extra);
+        }
     }
 }

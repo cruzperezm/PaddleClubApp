@@ -37,11 +37,7 @@ public class Court {
     }
 
     public List<Reservation> getReservations(){
-        return this.reservations;
-    }
-    public void addReservation(Date date, Customer customer, Court court, int price){
-        Reservation reservation = new Reservation(date, customer, court, price);
-        reservations.add(reservation);
+        return new ArrayList<>(this.reservations);
     }
     public void removeReservation(Reservation reservation){
         reservations.remove(reservation);
@@ -55,6 +51,8 @@ public class Court {
         }
     }
     public void addReservation(Reservation reservation) {
-        this.reservations.add(reservation);
+        if (!this.reservations.contains(reservation)){
+            this.reservations.add(reservation);
+        }
     }
 }

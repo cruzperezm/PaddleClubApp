@@ -42,7 +42,7 @@ public class Customer {
     }
 
     public List<Reservation> getReservations(){
-        return this.reservations;
+        return new ArrayList<>(this.reservations);
     }
     public void addReservation(Date date, Customer customer, Court court, int price){
         Reservation reservation = new Reservation(date, customer, court, price);
@@ -51,7 +51,7 @@ public class Customer {
     public void removeReservation(Reservation reservation){
         reservations.remove(reservation);
     }
-    public Reservation getReservations(int index) {
+    public Reservation getReservation(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
         }
@@ -60,6 +60,8 @@ public class Customer {
         }
     }
     public void addReservation(Reservation reservation) {
-        this.reservations.add(reservation);
+        if (!this.reservations.contains(reservation)){
+            this.reservations.add(reservation);
+        }
     }
 }
