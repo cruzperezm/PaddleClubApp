@@ -11,8 +11,8 @@ public class Main {
                 "Leon y Castillo", 41, 35010, "Las Palmas de Gran Canaria"));
         paddleManager.addCustomer("Jorge", "Hernández","12SD34TT4");
 
-        paddleManager.addCourt(new Court("Rápida", 20, CourtType.FASTCOURT));
-        paddleManager.addCourt(new Court("Lenta", 20, CourtType.SLOWCOURT));
+        paddleManager.addCourt("Rápida", 20, CourtType.FASTCOURT);
+        paddleManager.addCourt("Lenta", 20, CourtType.SLOWCOURT);
 
     }
     public static void main(String[] args) {

@@ -1,22 +1,23 @@
 package org.ulpgc.is1.model;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 
 public class PaddleManager {
 
     private ArrayList<Customer> customerList;
     private ArrayList<Court> courtList;
-    private ArrayList<Reservation> reservations;
 
     public PaddleManager() {
         customerList = new ArrayList<>();
-        courtList = new ArrayList<>();
-        reservations = new ArrayList<>();
+        courtList = new ArrayList();
     }
 
     public void addCustomer(String name, String surname, String nif) {
         Customer newCustomer = new Customer(name, surname, nif);
+        customerList.add(newCustomer);
+    }
+    public void addCustomer(Customer newCustomer) {;
         customerList.add(newCustomer);
     }
 
@@ -29,7 +30,6 @@ public class PaddleManager {
         Reservation reservation = new Reservation(date, customer, court, price);
         customer.addReservation(reservation);
         court.addReservation(reservation);
-        reservations.add(reservation);
     }
 
     public Customer getCustomer(int index) {
@@ -83,13 +83,8 @@ public class PaddleManager {
         }
         return i;
     }
-
-    public ArrayList<Reservation> getReservations() {
-        return new ArrayList<>(this.reservations);
-    }
-
     public ArrayList<Customer> getCustomers() {
-        return new ArrayList<>(this.customerList);
+        return new ArrayList(this.customerList);
     }
     public ArrayList<Court> getCourts() {
         return new ArrayList<>(this.courtList);
