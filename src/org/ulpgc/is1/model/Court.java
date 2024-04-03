@@ -8,7 +8,7 @@ public class Court {
     private String name;
     private int price;
     private CourtType type;
-    private List reservations;
+    private List<Reservation> reservations;
 
     public Court(String name, int price, CourtType type) {
         this.name = name;

@@ -8,7 +8,7 @@ public class Customer {
     private String name;
     private String surname;
     private Nif nif;
-    private ArrayList<Reservation> reservations;
+    private List<Reservation> reservations;
 
     public Customer(String name, String surname, String nif) {
         this.name = name;

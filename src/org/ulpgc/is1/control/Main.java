@@ -35,7 +35,8 @@ public class Main {
 
         paddleManager.reserve(new Date(),
                 paddleManager.getCustomer(0),
-                paddleManager.getCourt(1), paddleManager.getCourt(1).getPrice());
+                paddleManager.getCourt(1),
+                paddleManager.getCourt(1).getPrice());
 
         paddleManager.deleteCustomer(1);
 
