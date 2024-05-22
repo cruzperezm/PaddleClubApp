@@ -5,7 +5,6 @@ import org.ulpgc.is1.model.*;
 import java.util.Date;
 
 public class Main {
-
     public static void init(PaddleManager paddleManager) {
         paddleManager.addCustomer(new Member(11, "Ana", "Santana", "12345678Z",
                 "Leon y Castillo", 41, 35010, "Las Palmas de Gran Canaria"));
