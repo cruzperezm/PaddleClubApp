@@ -50,7 +50,7 @@ public class Reservation {
         this.court = court;
     }
 
-    public List<Extra> getExtras() {
+    public ArrayList<Extra> getExtras() {
         return new ArrayList<>(this.extras);
     }
     public int getPrice() {
